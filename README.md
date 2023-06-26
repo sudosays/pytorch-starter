@@ -10,8 +10,8 @@ What you will need:
 
 * Data such as datasets or test results are stored in Pandas DataFrame files.  
 * Analysis is done in Jupyter notebooks.   
-* Configurations and metadata are stored in TOML files (JSON and INI also
-possible).  
+* Configurations and metadata are stored in INI files.  
+    - To be replaced with TOML files (JSON also possible).  
 
 ### Potential datasets used
 
@@ -102,7 +102,7 @@ Configuration in ML projects needs to be flexible and adjustable.
 This project approaches configuration by:
 
 1. Specifying default values for function arguments such as in model construction, test setup, etc.
-2. Using configuration files written in the TOML format to read settings.
+2. Using configuration files written in the INI format to read settings.
 3. Parsing command-line arguments to scripts such as `train.py` and `preprocess.py`
 
 Furthermore, there is a strict hierarchy and precedence in how configurations
@@ -112,7 +112,7 @@ are managed and applied:
 - command line arguments overwrite values in configuration files.
 
 When a configuration is completed, it must be logged and an information file
-(also in the TOML format) must be saved with the relevant data. This allows you
+(also in the INI format) must be saved with the relevant data. This allows you
 to go back and quickly run a specific configuration again without having to
 remember the command-line arguments passed before.
 
@@ -127,6 +127,8 @@ also for documenting the research process. When approached correctly, it can
 provide valuable insight into how an experiment or set of results came about.
 
 This is related to the idea of *provenance* for research artefacts.
+
+*Note: message timestamps are in the ISO8601 format from UTC time generated as: `datetime.now().astimezone().isoformat()`*
 
 ### Structured logging
 
