@@ -88,7 +88,46 @@ The `$DATA` folder is self contained so that it can be synchronised and archived
 
 
 Using Rsync:
-TODO
+
+*TODO*
 
 Creating a Tar archive:
-TODO
+
+*TODO*
+
+## Configuration Strategy and Arguments
+
+Configuration in ML projects needs to be flexible and adjustable.
+
+This project approaches configuration by:
+
+1. Specifying default values for function arguments such as in model construction, test setup, etc.
+2. Using configuration files written in the TOML format to read settings.
+3. Parsing command-line arguments to scripts such as `train.py` and `preprocess.py`
+
+Furthermore, there is a strict hierarchy and precedence in how configurations
+are managed and applied:
+
+- config files overwrite values in default function arguments
+- command line arguments overwrite values in configuration files.
+
+When a configuration is completed, it must be logged and an information file
+(also in the TOML format) must be saved with the relevant data. This allows you
+to go back and quickly run a specific configuration again without having to
+remember the command-line arguments passed before.
+
+## Logging
+
+Whenever possible, logs should be generated with relevant information. In
+addition to trained models, data, or results: log files are a fundamental piece
+of data that helps connect the processes for experiments.
+
+It is good practice to no only use logs for monitoring running experiments, but
+also for documenting the research process. When approached correctly, it can
+provide valuable insight into how an experiment or set of results came about.
+
+This is related to the idea of *provenance* for research artefacts.
+
+### Structured logging
+
+*TODO*
