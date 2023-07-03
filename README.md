@@ -2,7 +2,7 @@
 
 This is a starting point for doing ML research projects.
 
-A lot of it is inspired by [this blog post](https://julienbeaulieu.github.io/2020/03/16/building-a-flexible-configuration-system-for-deep-learning-models/).
+A lot of it is inspired by [this blog post](https://julienbeaulieu.github.io/2020/03/16/building-a-flexible-configuration-system-for-deep-learning-models/) as well as the [Cookiecutter Data Science repo](https://github.com/drivendata/cookiecutter-data-science/).
 
 What you will need:
 
